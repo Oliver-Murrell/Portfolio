@@ -11,9 +11,10 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
-
 export default function App() {
-  const { dark, toggle } = useTheme();
+  // enforce dark-only
+  const dark = true;
+  const toggle = () => {}; // no-op to preserve Header prop signature
   const [menuOpen, setMenuOpen] = useState(false);
 
   const sections = [
@@ -25,15 +26,9 @@ export default function App() {
   ];
   const active = useScrollSpy(sections.map((s) => s.id));
 
-  // Pick a full-page theme set explicitly (light vs dark)
-  const pageTheme = dark
-    ? "bg-gray-900 text-gray-100"
-    : "bg-gray-50 text-gray-900";
-
-  // If you want the gradient too, add it on top of the theme bg:
-  const pageBg = dark
-    ? "bg-gradient-to-b from-gray-900 to-gray-800"
-    : "bg-gradient-to-b from-gray-50 to-gray-100";
+  // Dark-only theme classes
+  const pageTheme = "bg-gray-900 text-gray-100";
+  const pageBg = "bg-gradient-to-b from-gray-900 to-gray-800";
 
   return (
     <div className={`min-h-screen ${pageTheme} ${pageBg} transition-colors`}>
@@ -53,9 +48,7 @@ export default function App() {
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -20, opacity: 0 }}
-            className={`md:hidden shadow p-4 space-y-3 rounded-lg ${
-              dark ? "bg-gray-900" : "bg-white"
-            }`}
+            className="md:hidden shadow p-4 space-y-3 rounded-lg bg-gray-900"
           >
             {sections.map((item) => (
               <a
@@ -63,21 +56,13 @@ export default function App() {
                 href={`#${item.id}`}
                 onClick={() => setMenuOpen(false)}
                 className={
-                  active === item.id
-                    ? dark
-                      ? "text-blue-400"
-                      : "text-blue-600"
-                    : dark
-                    ? "hover:text-blue-400"
-                    : "hover:text-blue-600"
+                  active === item.id ? "text-blue-400" : "hover:text-blue-400"
                 }
               >
                 {item.label}
               </a>
             ))}
-            <button onClick={toggle} className="text-sm border rounded px-2 py-1">
-              {dark ? "Light" : "Dark"} Mode
-            </button>
+            {/* theme toggle removed for dark-only site */}
           </motion.div>
         )}
       </AnimatePresence>
