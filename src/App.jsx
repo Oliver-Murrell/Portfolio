@@ -1,5 +1,3 @@
-// FILE: src/App.jsx
-
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTheme } from "./hooks/useTheme";
