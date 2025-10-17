@@ -7,7 +7,7 @@ export default function Contact() {
       <h3 className="text-3xl font-bold">Contact Me</h3>
       <div className="mt-6 space-y-2 text-lg">
         <p>Oliver</p>
-        <p>+44 7412 488816</p>
+        {/* <p>+44 7412 488816</p> */}
         <p>olivermurrell@btinternet.com</p>
       </div>
     </section>
