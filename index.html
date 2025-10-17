@@ -1,6 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" class="dark">
   <head>
+    <script>
+      (function () {
+        try {
+          const saved = localStorage.getItem("theme");
+          const defaultIsDark = true;
+          const prefersDark =
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches;
+          const startDark = saved
+            ? saved === "dark"
+            : defaultIsDark || prefersDark;
+          if (startDark) {
+            document.documentElement.classList.add("dark");
+          } else {
+            document.documentElement.classList.remove("dark");
+          }
+        } catch (e) {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+    </script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Oliver • Portfolio</title>
@@ -10,6 +32,3 @@
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
-
-
-
