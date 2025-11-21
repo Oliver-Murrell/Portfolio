@@ -14,7 +14,7 @@ import Footer from "./components/Footer";
 export default function App() {
   // enforce dark-only
   const dark = true;
-  const toggle = () => {}; // no-op to preserve Header prop signature
+  const toggle = () => {};
   const [menuOpen, setMenuOpen] = useState(false);
 
   const sections = [

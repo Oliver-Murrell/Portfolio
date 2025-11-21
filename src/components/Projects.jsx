@@ -77,7 +77,7 @@ export default function Projects() {
                 <img
                   src={p.image}
                   alt={p.title}
-                  className="w-full h-40 object-cover"
+                  className="w-full h-48 object-cover rounded-lg bg-gray-900 mb-4"
                 />
               )}
 
@@ -85,9 +85,12 @@ export default function Projects() {
                 <h4 className="text-lg font-semibold">{p.title}</h4>
                 <p className="text-sm mt-2 opacity-80 flex-1">{p.summary}</p>
 
-                <div className="mt-3 flex gap-2 flex-wrap">
+                <div className="mt-3 flex gap-2 flex-wrap justify-center">
                   {(p.tags || []).slice(0, 4).map((t) => (
-                    <span key={t} className="text-xs px-2 py-1 border rounded-full">
+                    <span
+                      key={t}
+                      className="text-xs px-2 py-1 border rounded-full"
+                    >
                       {t}
                     </span>
                   ))}
@@ -100,4 +103,3 @@ export default function Projects() {
     </section>
   );
 }
-

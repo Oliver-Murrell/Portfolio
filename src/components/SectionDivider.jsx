@@ -1,4 +1,3 @@
-// FILE: src/components/SectionDivider.jsx
 import React from "react";
 
 // A 1px tall gradient rule that fades out at the edges

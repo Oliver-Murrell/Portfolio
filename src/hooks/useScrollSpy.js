@@ -1,4 +1,3 @@
-// FILE: src/hooks/useScrollSpy.js
 import { useEffect, useState } from "react";
 export function useScrollSpy(ids, offset = 200) {
   const [active, setActive] = useState(ids[0] || "");
