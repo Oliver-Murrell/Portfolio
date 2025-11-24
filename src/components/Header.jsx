@@ -66,7 +66,6 @@ export default function Header({ sections = [], active }) {
         {/* Right side: mobile menu button + anchored dropdown */}
         <div className="absolute right-6 flex items-center gap-4">
           <div ref={anchorRef} className="relative md:hidden">
-            {/* MENU BUTTON — reverted to previous rectangular shape (rounded-md) */}
             <button
               type="button"
               className="p-2 rounded-md border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 shadow hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer transition"

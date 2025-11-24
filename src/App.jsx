@@ -12,7 +12,6 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 export default function App() {
-  // enforce dark-only
   const dark = true;
   const toggle = () => {};
   const [menuOpen, setMenuOpen] = useState(false);
@@ -26,7 +25,6 @@ export default function App() {
   ];
   const active = useScrollSpy(sections.map((s) => s.id));
 
-  // Dark-only theme classes
   const pageTheme = "bg-gray-900 text-gray-100";
   const pageBg = "bg-gradient-to-b from-gray-900 to-gray-800";
 
@@ -62,7 +60,6 @@ export default function App() {
                 {item.label}
               </a>
             ))}
-            {/* theme toggle removed for dark-only site */}
           </motion.div>
         )}
       </AnimatePresence>
