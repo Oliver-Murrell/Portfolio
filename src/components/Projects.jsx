@@ -86,7 +86,7 @@ export default function Projects() {
                 <p className="text-sm mt-2 opacity-80 flex-1">{p.summary}</p>
 
                 <div className="mt-3 flex gap-2 flex-wrap justify-center">
-                  {(p.tags || []).slice(0, 4).map((t) => (
+                  {(p.tags || []).map((t) => (
                     <span
                       key={t}
                       className="text-xs px-2 py-1 border rounded-full"
