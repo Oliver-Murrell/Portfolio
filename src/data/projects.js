@@ -41,7 +41,7 @@ export const projects = [
 
   {
     id: "p5",
-    link: "https://simon-challenge-lemon.vercel.app/",
+    link: "https://memory-challenge-lemon.vercel.app/",
     image: "./images/memory-challenge.png",
     title: "Memory Game",
     summary:
