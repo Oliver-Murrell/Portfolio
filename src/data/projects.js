@@ -21,7 +21,7 @@ export const projects = [
 
   {
     id: "p3",
-    link: "https://joke-website-project-rjzadbi1t-olivers-projects-7fdb0275.vercel.app/",
+    link: "https://joke-website-project.vercel.app/",
     image: "./images/joke-website.png",
     title: "Joke Generator Website",
     summary:
