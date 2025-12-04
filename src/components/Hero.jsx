@@ -130,9 +130,13 @@ function Avatar() {
 function Intro() {
   return (
     <div className="max-w-3xl text-gray-100">
-      <h2 className="text-5xl font-extrabold leading-tight">Hi, I&apos;m Oliver!</h2>
+      <h2 className="text-5xl font-extrabold leading-tight">
+        Hi, I&apos;m Oliver!
+      </h2>
       <p className="mt-4 text-lg opacity-90">
-        I build stylish, functional web apps with React and Node. I care about clean code, great UX, and lifelong learning.
+        Welcome to my portfolio. Here you can explore this page to find out a
+        little bit more about me, my coding experience, and the projects i've
+        made since starting my coding journey.
       </p>
       <div className="mt-6 flex gap-3 justify-center">
         <a
