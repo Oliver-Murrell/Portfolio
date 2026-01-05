@@ -1,6 +1,21 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+// Reuse the same smooth scroll behavior as the header
+const handleSmoothScroll = (e, targetId) => {
+  e.preventDefault();
+  if (targetId === "home") {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  } else {
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - 73; // navbar height offset
+      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+    }
+  }
+};
+
 export default function Hero() {
   return (
     <section id="home" className="relative max-w-6xl mx-auto p-6 text-center">
@@ -151,12 +166,14 @@ function Intro() {
       <div className="mt-6 flex gap-3 justify-center">
         <a
           href="#projects"
+          onClick={(e) => handleSmoothScroll(e, "projects")}
           className="px-5 py-2 rounded-full border border-gray-700 text-gray-100 shadow hover:bg-gray-700 transition"
         >
           See Projects
         </a>
         <a
           href="#contact"
+          onClick={(e) => handleSmoothScroll(e, "contact")}
           className="px-5 py-2 rounded-full border border-gray-700 text-gray-100 shadow hover:bg-gray-700 transition"
         >
           Contact Me
@@ -185,7 +202,7 @@ function QuickFacts() {
           GitHub
         </a>
         <a
-	      href="/Oliver-Murrell-CV%202026.pdf"
+          href="/Oliver-Murrell-CV%202026.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-600 dark:text-blue-400 hover:underline"

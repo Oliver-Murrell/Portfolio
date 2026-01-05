@@ -18,8 +18,8 @@ export default function Skills() {
     }
   };
   return (
-    <section id="skills" className="max-w-6xl mx-auto p-6 text-center pb-20">
-      <h3 className="text-3xl font-bold mb-6">Skills</h3>
+    <section id="skills" className="max-w-6xl mx-auto px-6 py-10 text-center">
+      <h3 className="text-3xl font-bold mb-10">Skills</h3>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6 place-items-center">
         {skills.map((s) => (
           <motion.div

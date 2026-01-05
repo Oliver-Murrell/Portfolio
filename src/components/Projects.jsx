@@ -15,8 +15,8 @@ export default function Projects() {
   }, []);
 
   return (
-    <section id="projects" className="max-w-6xl mx-auto p-6 text-center pb-20">
-      <h3 className="text-3xl font-bold mb-6">Projects</h3>
+    <section id="projects" className="max-w-6xl mx-auto px-6 py-10 text-center">
+      <h3 className="text-3xl font-bold mb-10">Projects</h3>
 
       {loading ? (
         <p className="opacity-70">Loading projects...</p>
