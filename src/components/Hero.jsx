@@ -114,12 +114,15 @@ function Avatar() {
     >
       <div
         className="absolute inset-0 rounded-full"
-        style={{ background: "conic-gradient(from 0deg,#3b82f6,#a855f7,#ec4899,#3b82f6)" }}
+        style={{
+          background:
+            "conic-gradient(from 0deg,#3b82f6,#a855f7,#ec4899,#3b82f6)",
+        }}
       />
       {/* Dark-only inner mask */}
       <div className="absolute inset-[4px] rounded-full overflow-hidden bg-gray-900" />
       <img
-        src="https://via.placeholder.com/300x300.png?text=Your+Photo"
+        src="./images/profile-picture.png"
         alt="Oliver"
         className="relative w-full h-full object-cover rounded-full select-none pointer-events-none"
       />
@@ -161,18 +164,27 @@ function QuickFacts() {
     <aside className="w-full max-w-sm p-6 bg-gray-800 text-gray-100 border border-gray-700 rounded-2xl shadow-xl mx-auto">
       <p className="font-semibold">Quick facts</p>
       <ul className="mt-3 text-sm space-y-1 opacity-90">
-        <li>📍 London (remote-friendly)</li>
-        <li>💻 Full-Stack Junior Web Developer</li>
-        <li>🤝 Open to collaborations &amp; contract work</li>
+        <li>💻 Full-stack Web Developer</li>
+        <li>🚀 Always learning new tech</li>
+        <li>🧠 Problem solver</li>
       </ul>
       <div className="mt-4 flex flex-col gap-2">
-        <a href="https://github.com/Oliver-Murrell" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">
+        <a
+          href="https://github.com/Oliver-Murrell"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 dark:text-blue-400 hover:underline"
+        >
           GitHub
         </a>
-        <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">
+        <a
+          href="/resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 dark:text-blue-400 hover:underline"
+        >
           CV
         </a>
-
       </div>
     </aside>
   );
