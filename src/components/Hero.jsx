@@ -122,7 +122,7 @@ function Avatar() {
       {/* Dark-only inner mask */}
       <div className="absolute inset-[4px] rounded-full overflow-hidden bg-gray-900" />
       <img
-        src="./images/profile-picture.png"
+        src="./images/profile-picture.jpg"
         alt="Oliver"
         className="relative w-full h-full object-cover rounded-full select-none pointer-events-none"
       />
