@@ -36,7 +36,10 @@ function LensStarfield({ count = 160, lensRadius = 140, lensStrength = 22 }) {
     const onMove = (e) => {
       const r = c.getBoundingClientRect();
       mouse.current.inside =
-        e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;
+        e.clientX >= r.left &&
+        e.clientX <= r.right &&
+        e.clientY >= r.top &&
+        e.clientY <= r.bottom;
       mouse.current.x = e.clientX - r.left;
       mouse.current.y = e.clientY - r.top;
     };
@@ -61,9 +64,11 @@ function LensStarfield({ count = 160, lensRadius = 140, lensStrength = 22 }) {
         s.tw += 0.02;
         let a = 0.22 + 0.25 * Math.sin(s.tw);
 
-        let dx = 0, dy = 0;
+        let dx = 0,
+          dy = 0;
         if (mouse.current.inside) {
-          const mx = mouse.current.x, my = mouse.current.y;
+          const mx = mouse.current.x,
+            my = mouse.current.y;
           const ddx = s.x - mx;
           const ddy = s.y - my;
           const d = Math.hypot(ddx, ddy);
@@ -95,7 +100,10 @@ function LensStarfield({ count = 160, lensRadius = 140, lensStrength = 22 }) {
   }, [count, lensRadius, lensStrength]);
 
   return (
-    <div aria-hidden="true" className="absolute inset-0 z-0 pointer-events-none">
+    <div
+      aria-hidden="true"
+      className="absolute inset-0 z-0 pointer-events-none"
+    >
       <canvas ref={canvasRef} className="w-full h-full" />
     </div>
   );
@@ -119,7 +127,6 @@ function Avatar() {
             "conic-gradient(from 0deg,#3b82f6,#a855f7,#ec4899,#3b82f6)",
         }}
       />
-      {/* Dark-only inner mask */}
       <div className="absolute inset-[4px] rounded-full overflow-hidden bg-gray-900" />
       <img
         src="./images/profile-picture.jpg"
@@ -178,7 +185,7 @@ function QuickFacts() {
           GitHub
         </a>
         <a
-          href="/resume.pdf"
+	      href="/Oliver-Murrell-CV%202026.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-600 dark:text-blue-400 hover:underline"
