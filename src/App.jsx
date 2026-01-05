@@ -73,6 +73,7 @@ export default function App() {
       <Projects />
       <DividerHairline />
       <Contact />
+      <DividerHairline />
       <Footer />
     </div>
   );

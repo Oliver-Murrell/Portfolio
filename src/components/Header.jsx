@@ -30,13 +30,21 @@ export default function Header({ sections = [], active }) {
     return () => document.removeEventListener("keydown", onKey);
   }, []);
 
-  // If viewport becomes md+ close the mobile dropdown
-  React.useEffect(() => {
-    const mq = window.matchMedia("(min-width: 768px)");
-    const handler = (e) => e.matches && closeMenu();
-    mq.addEventListener("change", handler);
-    return () => mq.removeEventListener("change", handler);
-  }, []);
+  // Smooth scroll handler
+  const handleNavClick = (e, targetId) => {
+    e.preventDefault();
+    if (targetId === "home") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - 73; // Offset by navbar height
+        window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+      }
+    }
+    closeMenu();
+  };
 
   // Desktop link styling (keeps your dark variants)
   const navLinkClass = (id) =>
@@ -52,7 +60,12 @@ export default function Header({ sections = [], active }) {
         {/* Desktop navigation */}
         <nav className="hidden md:flex gap-6 items-center text-sm font-medium">
           {sections.map((item) => (
-            <a key={item.id} href={`#${item.id}`} className={navLinkClass(item.id)}>
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              onClick={(e) => handleNavClick(e, item.id)}
+              className={navLinkClass(item.id)}
+            >
               {item.label}
               <span
                 className={`absolute left-0 -bottom-0.5 h-0.5 bg-blue-600 dark:bg-blue-400 transition-all duration-300 ${
@@ -102,7 +115,7 @@ export default function Header({ sections = [], active }) {
                       key={item.id}
                       href={`#${item.id}`}
                       className="px-3 py-2 rounded-md border border-transparent hover:border-gray-300 dark:hover:border-gray-700 transition"
-                      onClick={closeMenu} // close after navigating
+                      onClick={(e) => handleNavClick(e, item.id)}
                       role="menuitem"
                     >
                       {item.label}
