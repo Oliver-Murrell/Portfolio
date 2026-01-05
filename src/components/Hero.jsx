@@ -162,8 +162,8 @@ function Intro() {
 function QuickFacts() {
   return (
     <aside className="w-full max-w-sm p-6 bg-gray-800 text-gray-100 border border-gray-700 rounded-2xl shadow-xl mx-auto">
-      <p className="font-semibold">Quick facts</p>
-      <ul className="mt-3 text-sm space-y-1 opacity-90">
+      <p className="font-semibold text-lg">Quick facts</p>
+      <ul className="mt-3 text-base space-y-1 opacity-90">
         <li>💻 Full-stack Web Developer</li>
         <li>🚀 Always learning new tech</li>
         <li>🧠 Problem solver</li>
