@@ -202,12 +202,12 @@ function QuickFacts() {
           GitHub
         </a>
         <a
-          href="/Oliver-Murrell-CV%202026.pdf"
+          href="https://www.linkedin.com/in/oliver-murrell-aa654a273/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-600 dark:text-blue-400 hover:underline"
         >
-          CV
+          LinkedIn
         </a>
       </div>
     </aside>
